@@ -1,4 +1,7 @@
 
+
+array = [1,2,0,1,0,1,0,3,0,1]
+
 def move_zeros(array):
     if array == []:
         return array
