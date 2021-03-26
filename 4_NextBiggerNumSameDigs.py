@@ -54,9 +54,9 @@ n = 2665333
 
 next_bigger(n)
 
-dupl = sorted([''.join(x) for x in list(permutations(ns)) if x[0] >= f ])
-set(dupl)
+# dupl = sorted([''.join(x) for x in list(permutations(ns)) if x[0] >= f ])
+# set(dupl)
 
 
-digits = list(str(n))
-    for pos, d in reversed(tuple(enumerate(digits))):
+# digits = list(str(n))
+#     for pos, d in reversed(tuple(enumerate(digits))):

@@ -1,8 +1,45 @@
 
 
-def onlypars(str):
-    want = set('()')
-    return ''.join(c for c in str if c in want)
+
+# (())((()())())
+# "hi(hi)()"
+
+bad = ')('
+this = 'hi(hi)()'
+this2 = '(())(((Quinn)())())'
+
+
+# Need to find spots of closed () and mark the first ( so then I can loop thru and remove all pairs like this
+
+def valid_parentheses(string):
+    if len(string) == 0:
+        return True
+    s = ''.join(c for c in string if c in set('()'))
+    pair = s.find('()')
+    while pair != -1:
+        s = s[:pair] + s[(pair + 2):]
+        if len(s) == 0:
+            break
+        pair = s.find('()')
+    if pair == -1:
+        return False
+    return True
+
+valid_parentheses(this2)
+
+def valid_parentheses(string):
+    if len(string) == 0:
+        return True
+    s = ''.join(c for c in string if c in set('()'))
+    while s.find('()') != -1:
+        s = s[:s.find('()')] + s[(s.find('()') + 2):]
+        if len(s) == 0:
+            return True
+    return False
+
+
+# All below is wack code :)
+
 
 def firstlastpars(str):
     if str[0] == '(' and str[-1] == ')':
