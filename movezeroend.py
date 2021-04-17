@@ -1,21 +1,25 @@
 
-
+array = ["a",0,0,"b",None,"c","d",0,1,False,0,1,True,0,3,[],0,1,9,0,0,{},0,0,9] #),["a","b",None,"c","d",1,False,1,3,[],1,9,{},9,0,0,0,0,0,0,0,0,0,0]
 array = [1,2,0,1,0,1,0,3,0,1]
 
 def move_zeros(array):
     if array == []:
         return array
-    if array[-1] == 0:
-        array = array[0:-1]
-    #count zeros
+    # if array[-1] == 0:
+    #     array = array[0:-1]
     num0 = array.count(0)
-    #remove zeros
-    array = list(filter(lambda a: a != 0, array))
-    #add zeros end
+    array = list(filter(lambda a: a == 0 & isinstance(a, bool), array))
     array.extend([0] * num0)
     return array
 
-move_zeros(test)
+False != 0 & isinstance(False,int)
+False == 0
+True == 0
+False != False
+isinstance(True,bool)
+isinstance(False,bool)
+
+move_zeros(array)
 
 test = [1, None, 2, 1, 0, 0, 0]
 test.count(0)
